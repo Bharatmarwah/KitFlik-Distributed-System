@@ -1,187 +1,102 @@
-🎬 KitFlik – Distributed Movie Booking Platform
-
-A production-grade distributed backend system built using Spring Boot, Spring Cloud, Spring WebFlux, Redis, JWT Security, Resilience4j, and MySQL.
-KitFlik provides a fully modular microservices architecture for handling movies, bookings, user accounts, admin operations, and notifications with high performance and scalability.
-
-📌 Overview
-
-KitFlik is composed of multiple independently deployable microservices communicating via a reactive API Gateway.
-The system supports user authentication, movie listing, ticket booking, notifications, and admin management with secure, fault-tolerant, load-balanced routing.
-
-🧩 Microservices
-🔐 Auth Gateway
-
-Reactive API Gateway using Spring WebFlux and LoadBalancer.
-Handles token generation, validation, routing, and exposes authentication endpoints.
-
-Key Responsibilities
-
-Generate Access & Refresh Tokens
-
-Validate JWT via custom filters
-
-Non-blocking routing using WebFlux
-
-Load-balanced WebClient communication
-
-Authentication endpoints: login, register, forgot password, reset password, logout, refresh token
-
-👤 User Service
-
-Manages the complete user lifecycle.
-
-Capabilities
-
-User registration
-
-Credential verification
-
-Password reset support
-
-Provides user details to Gateway and Admin Service
-
-Triggers notification emails
-
-🎞️ Movie Management Service
-
-Handles movies and booking modules in a single service.
-
-Movie Module
-
-Fetch all movies
-
-Search by type
-
-Search by name
-
-Redis caching for improved performance
-
-Booking Module
-
-Book movie
-
-Update booking
-
-Remove booking
-
-Confirm booking
-
-Fetch confirmed bookings
-
-🛡 Admin Service
-
-Dedicated admin operations with its own authentication flow.
-
-Capabilities
-
-Admin login and token generation
-
-Validate admin JWT
-
-Fetch user details
-
-Delete user by ID
-
-Access confirmed bookings from Movie Management Service
-
-🔔 Notification Service
-
-Handles all email-related operations.
-
-Capabilities
-
-Registration emails
-
-OTP for password resets
-
-Booking confirmation mails
-
-Scheduled Friday email reminders
-
-🌐 Service Registry (Eureka)
-
-Centralized service discovery for all microservices with dynamic load-balanced routing.
-
-🛠 Architecture
-                  ![WhatsApp Image 2025-11-18 at 23 41 11_312b4047](https://github.com/user-attachments/assets/512b4f5d-1190-47aa-af44-37e5c0d6081f)
-
-
-
-
-             
-⚙️ Tech Stack
-
-Language — Java 21
-Frameworks — Spring Boot, Spring Cloud
-Gateway — Spring WebFlux, Spring Cloud LoadBalancer
-Communication — Reactive WebClient
-Security — JWT Authentication
-Database — MySQL with Spring Data JPA
-Caching — Redis
-Scheduling — Spring Scheduler
-Resilience — Resilience4j
-Service Discovery — Eureka
-Build — Maven
-Other — Lombok, ModelMapper
-
-🔄 Communication Flow
-
-Gateway ↔ UserService (authentication, verification)
-
-Gateway ↔ NotificationService (registration and OTP emails)
-
-MovieManagementService ↔ NotificationService (booking updates)
-
-AdminService ↔ UserService (user operations)
-
-AdminService ↔ MovieManagementService (confirmed bookings)
-
-All via WebClient + LoadBalancer
-
-🛡 Fault Tolerance
-
-Resilience4j is integrated into all inter-service communication for:
-
-Circuit Breaking
-
-Retry
-
-Rate Limiting
-
-Time Limiting
-
-Fallback responses
-
-🧪 Testing Summary
-
-All services tested through Gateway
-
-Redis caching validated
-
-Email service operational
-
-Admin authorization validated
-
-API response latency: 33ms – 433ms
-
-🚀 Run Order
-
-Service Registry
-
-Auth Gateway
-
-User Service
-
-Movie Management Service
-
-Admin Service
-
-Notification Service
-
-
-👤 Author
-
-Bharat Marwah
-Java Backend Developer | System Architect
-
-🔗 LinkedIn: https://www.linkedin.com/in/bharat-marwah-323056319/
+# 🎬 KitFlik – Distributed Movie Booking Platform
+
+A **production-grade**, highly scalable, and fault-tolerant **distributed movie booking system** built using modern Java technologies with a reactive microservices architecture.
+
+![KitFlik Architecture](https://github.com/user-attachments/assets/512b4f5d-1190-47aa-af44-37e5c0d6081f)
+
+## 📌 Overview
+
+KitFlik is a fully modular, reactive microservices-based movie ticket booking platform that supports:
+
+- User registration & authentication
+- Movie browsing & search
+- Secure ticket booking
+- Admin dashboard
+- Real-time email notifications
+- High availability & fault tolerance
+
+All services communicate asynchronously via a **reactive API Gateway** using **Spring WebFlux**, ensuring non-blocking, high-performance operations.
+
+## Microservices Architecture
+
+| Service                    | Core Responsibilities                                                                 | Key Technologies                              |
+|----------------------------|---------------------------------------------------------------------------------------|-----------------------------------------------|
+| **Auth Gateway**           | Reactive API Gateway, JWT issuance & validation, token refresh, secure routing, load balancing, rate limiting | Spring WebFlux, Spring Cloud Gateway, LoadBalancer, JJWT, Resilience4j |
+| **User Service**           | Full user lifecycle management, registration, login, profile updates, secure password reset with OTP, email verification | Spring Boot, Spring Data JPA, MySQL, BCrypt |
+| **Movie Management Service** | Movie catalog CRUD, advanced search, high-concurrency seat selection & booking, inventory locking, booking lifecycle, Redis caching | Spring Data Redis, JPA, MySQL, Redis, Reactive Streams |
+| **Admin Service**          | Separate admin auth flow, user management (view/delete), full access to confirmed bookings, privileged operations | Custom JWT, WebClient, RBAC |
+| **Notification Service**  | Asynchronous email engine, welcome mails, OTP delivery, booking confirmations, scheduled Friday reminders | Spring Mail, JavaMailSender, Thymeleaf, @Scheduled |
+| **Eureka Service Registry**| Dynamic service discovery, client-side load balancing, health checks, instance registry | Spring Cloud Netflix Eureka                   |
+ 
+## ⚙️ Tech Stack
+
+- **Language**: Java 21
+- **Core Framework**: Spring Boot 3.x
+- **Reactive Stack**: Spring WebFlux, Project Reactor
+- **API Gateway**: Spring Cloud Gateway + WebFlux
+- **Inter-service Communication**: Reactive WebClient + Spring Cloud LoadBalancer
+- **Security**: JWT (Access + Refresh Tokens)
+- **Database**: MySQL + Spring Data JPA
+- **Caching**: Redis
+- **Service Discovery**: Netflix Eureka
+- **Resilience**: Resilience4j (Circuit Breaker, Retry, Rate Limiter, Time Limiter)
+- **Scheduling**: Spring @Scheduled
+- **Build Tool**: Maven
+- **Utilities**: Lombok, ModelMapper
+
+## 🛡 Fault Tolerance & Resilience
+
+All inter-service calls are protected with **Resilience4j**:
+
+- Circuit Breaker
+- Retry Mechanism
+- Rate Limiting
+- Time Limiter
+- Fallback responses
+
+Ensures the system remains operational even during partial failures.
+
+## 🧪 Testing & Performance
+
+- All APIs tested end-to-end via Gateway
+- Redis caching validated (movie listings)
+- Email delivery confirmed
+- Admin role-based access enforced
+- **Average API latency**: 33ms – 433ms (depending on load & caching)
+
+## 🚀 Run Order (Local Development)
+
+1. **Eureka Server**
+2. **Auth Gateway**
+3. **User Service**
+4. **Movie Management Service**
+5. **Admin Service**
+6. **Notification Service**
+
+> Make sure MySQL, Redis, and Mail server (or MailHog for testing) are running.
+
+## 📂 Project Structure (High-level)
+kitflik/
+├── eureka-server/
+├── auth-gateway/
+├── user-service/
+├── movie-management-service/
+├── admin-service/
+├── notification-service/
+└── common/                 (shared models, exceptions, utils)
+text
+
+## 👤 Author
+
+**Bharat Marwah**  
+Java Backend Developer | Systems Architect
+
+🔗 [LinkedIn](https://www.linkedin.com/in/bharat-marwah-323056319/)  
+💼 Open for full-time opportunities in Backend/Java/Microservices
+
+---
+
+⭐ If you like this project, please give it a star!  
+Contributions, issues, and feature requests are welcome!
+
+---
