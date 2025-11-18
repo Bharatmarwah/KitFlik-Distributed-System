@@ -103,11 +103,10 @@ Scheduled Friday email reminders
 Centralized service discovery for all microservices with dynamic load-balanced routing.
 
 🛠 Architecture
+
                      ![WhatsApp Image 2025-11-18 at 23 41 11_312b4047](https://github.com/user-attachments/assets/512b4f5d-1190-47aa-af44-37e5c0d6081f)
 
-              All services registered to:  
-                   Eureka Service Registry
-
+             
 ⚙️ Tech Stack
 
 Language — Java 21
@@ -182,4 +181,5 @@ Notification Service
 
 Bharat Marwah
 Java Backend Developer | System Architect
+
 🔗 LinkedIn: https://www.linkedin.com/in/bharat-marwah-323056319/
