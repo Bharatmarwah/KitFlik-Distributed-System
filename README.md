@@ -103,8 +103,7 @@ Scheduled Friday email reminders
 Centralized service discovery for all microservices with dynamic load-balanced routing.
 
 🛠 Architecture
-                  ![WhatsApp Image 2025-11-18 at 23 41 11_312b4047]
-                  (https://github.com/user-attachments/assets/512b4f5d-1190-47aa-af44-37e5c0d6081f)
+                  ![WhatsApp Image 2025-11-18 at 23 41 11_312b4047](https://github.com/user-attachments/assets/512b4f5d-1190-47aa-af44-37e5c0d6081f)
 
 
 
