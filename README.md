@@ -25,7 +25,7 @@ All services communicate asynchronously via a **reactive API Gateway** using **S
 | **User Service**           | Full user lifecycle management, registration, login, profile updates, secure password reset with OTP, email verification | Spring Boot, Spring Data JPA, MySQL, BCrypt |
 | **Movie Management Service** | Movie catalog CRUD, advanced search, high-concurrency seat selection & booking, inventory locking, booking lifecycle, Redis caching | Spring Data Redis, JPA, MySQL, Redis, Reactive Streams |
 | **Admin Service**          | Separate admin auth flow, user management (view/delete), full access to confirmed bookings, privileged operations | Custom JWT, WebClient, RBAC |
-| **Notification Service**  | Asynchronous email engine, welcome mails, OTP delivery, booking confirmations, scheduled Friday reminders | Spring Mail, JavaMailSender, Thymeleaf, @Scheduled |
+| **Notification Service**  | Asynchronous email engine, welcome mails, OTP delivery, booking confirmations, scheduled Friday reminders | Spring Mail, JavaMailSender,@Scheduled |
 | **Eureka Service Registry**| Dynamic service discovery, client-side load balancing, health checks, instance registry | Spring Cloud Netflix Eureka                   |
  
 ## ⚙️ Tech Stack
