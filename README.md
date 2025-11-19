@@ -75,8 +75,8 @@ Ensures the system remains operational even during partial failures.
 
 > Make sure MySQL, Redis, and Mail server (or MailHog for testing) are running.
 
-## 📂 Project Structure (High-level)
-kitflik/
+## 📂 Project Structure (High-level)  Kitflik 
+
 ├── eureka-server/
 
 ├── auth-gateway/
