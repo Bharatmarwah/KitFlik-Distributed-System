@@ -54,3 +54,8 @@ resilience4j:
         limit-for-period: 20
         limit-refresh-period: 1s
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
