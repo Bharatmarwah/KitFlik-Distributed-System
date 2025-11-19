@@ -56,6 +56,34 @@ All inter-service calls are protected with **Resilience4j**:
 
 Ensures the system remains operational even during partial failures.
 
+## 🩺 Observability & Monitoring (Spring Boot Actuator)
+
+All microservices include Spring Boot Actuator with secure production-grade endpoints:
+
+**/actuator/health** – service health & dependency checks
+
+**/actuator/info** – application metadata
+
+**/actuator/metrics** – JVM, CPU, memory, HTTP request metrics
+
+**/actuator/prometheus** – for Grafana/Prometheus integration
+
+**/actuator/loggers** – dynamic logging level updates
+
+**Actuator is enabled in:**
+
+- Auth Gateway
+
+- User Service
+
+- Movie Management Service
+
+- Admin Service
+
+- Notification Service
+
+Each service registers health with Eureka, enabling automatic instance tracking and load-balancer awareness.
+
 ## 🧪 Testing & Performance
 
 - All APIs tested end-to-end via Gateway
