@@ -78,12 +78,19 @@ Ensures the system remains operational even during partial failures.
 ## 📂 Project Structure (High-level)
 kitflik/
 ├── eureka-server/
+
 ├── auth-gateway/
+
 ├── user-service/
+
 ├── movie-management-service/
+
 ├── admin-service/
+
 ├── notification-service/
-└── common/                 (shared models, exceptions, utils)
+
+└── common
+(shared models,exceptions, utils)
 text
 
 ## 👤 Author
