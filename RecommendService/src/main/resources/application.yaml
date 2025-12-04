@@ -1,0 +1,32 @@
+spring:
+  ai:
+    ollama:
+      chat:
+        model: ${OLLAMA_CHAT_MODEL:phi3:3.8b}
+      embedding:
+        model: ${OLLAMA_EMBEDDING_MODEL:mxbai-embed-large}
+
+    vectorstore:
+      pinecone:
+        api-key: ${PINECONE_API_KEY}
+        environment: ${PINECONE_ENV:us-east-1}
+        index-name: ${PINECONE_INDEX_NAME:kitflik-movies-index}
+        project-id: ${PINECONE_PROJECT_ID:kitflik-movies-index-zs2zfvz}
+        host: ${PINECONE_HOST}
+
+application:
+  name: ${APP_NAME:RecommendService}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+    register-with-eureka: ${EUREKA_REGISTER:true}
+    fetch-registry: ${EUREKA_FETCH:true}
+
+  instance:
+    prefer-ip-address: true
+    hostname: ${HOSTNAME:localhost}
