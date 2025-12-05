@@ -2,7 +2,7 @@
 
 A **production-grade**, highly scalable, and fault-tolerant **distributed movie booking system** built using modern Java technologies with a reactive microservices architecture.
 
-![KitFlik Architecture](https://github.com/Bharatmarwah/KitFlik-Distributed-System/blob/main/Kitflik_systemdesugn.draw.io.png)
+![KitFlik Architecture](https://github.com/Bharatmarwah/KitFlik-Distributed-System/blob/main/HighLevelDesign.png)
 
 ## 📌 Overview
 
