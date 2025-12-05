@@ -93,7 +93,7 @@ Each service registers health with Eureka, enabling automatic instance tracking 
 4. **Movie Management Service**  
 5. **Admin Service**  
 6. **Notification Service**  
-7. **Recommendation Service**
+7. **Recommend Service**
 
 > Make sure MySQL, Redis, Pinecone API keys, and AI model configurations are correctly set.
 
@@ -144,7 +144,7 @@ The **Recommendation Service** introduces AI-driven personalization into KitFlik
 ├── movie-management-service/
 ├── admin-service/
 ├── notification-service/
-├── recommendation-service/
+├── recommend-service/
 └── common
     (shared models,exceptions, utils)
 ```
