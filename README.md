@@ -152,7 +152,6 @@ The **Recommendation Service** introduces AI-driven personalization into KitFlik
 ## 👤 Author
 
 **Bharat Marwah**  
-Java Backend Developer | Systems Architect  
 
 🔗 https://www.linkedin.com/in/bharat-marwah-323056319/
 
